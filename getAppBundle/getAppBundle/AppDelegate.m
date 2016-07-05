@@ -34,16 +34,16 @@
         NSString *dataContainerURL = [LSApplicationProxy_class performSelector:@selector(dataContainerURL)];
         
         NSMutableDictionary *data = [@{} mutableCopy];
-        [data setValue:version forKey:@"bundleVersion"];
-        [data setValue:resourcesDirectoryURL forKey:@"resourcesDirectoryURL"];
-        [data setValue:sdkVersion forKey:@"sdkVersion"];
-        [data setValue:dataContainerURL forKey:@"dataContainerURL"];
-        
+        data[@"bundleVersion"] = version;
+        data[@"resourcesDirectoryURL"] = resourcesDirectoryURL;
+        data[@"sdkVersion"] = sdkVersion;
+        data[@"dataContainerURL"] = dataContainerURL;
+
         allDic[bundleID] = data;
 
     }
     
-    NSLog(@"%@",allDic);
+    NSLog(@"☺%@",allDic);
     
     return YES;
 }
